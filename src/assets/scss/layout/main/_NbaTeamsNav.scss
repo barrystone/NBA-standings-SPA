@@ -1,0 +1,14 @@
+.NbaTeamsNav-wrap {
+  // position: relative;
+  // top: 0px;
+  background-color: #d8d8d8;
+
+  h3 {
+    color: red;
+    border: 2px solid black;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
