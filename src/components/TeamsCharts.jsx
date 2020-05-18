@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Chart from "chart.js";
-// window.onresize.function(){
 
-// }
 class TeamsCharts extends Component {
   chartRef = React.createRef();
   componentDidMount() {
@@ -13,19 +11,20 @@ class TeamsCharts extends Component {
     console.log("chars-WillMount");
   }
   componentDidUpdate() {
+    // window.addEventListener("resize", this.fff());
     console.log("chars-DidUpdate");
     this.fff();
   }
   fff = () => {
     console.log("chars-fetching");
     const myChartRef = this.chartRef.current.getContext("2d");
-    const teams = this.props.lists.map(c => {
+    const teams = this.props.lists.map((c) => {
       return c.Name;
     });
-    const wins = this.props.lists.map(c => {
+    const wins = this.props.lists.map((c) => {
       return c.Wins;
     });
-    const losses = this.props.lists.map(c => {
+    const losses = this.props.lists.map((c) => {
       return c.Losses;
     });
     new Chart(myChartRef, {
@@ -50,9 +49,9 @@ class TeamsCharts extends Component {
               "rgba(255, 206, 86, 1)",
               "rgba(75, 192, 192, 1)",
               "rgba(153, 102, 255, 1)",
-              "rgba(255, 159, 64, 1)"
+              "rgba(255, 159, 64, 1)",
             ],
-            borderWidth: 0.5
+            borderWidth: 0.5,
           },
           {
             label: "Loses",
@@ -70,37 +69,40 @@ class TeamsCharts extends Component {
               "rgba(255, 206, 86, 1)",
               "rgba(75, 192, 192, 1)",
               "rgba(153, 102, 255, 1)",
-              "rgba(255, 159, 64, 1)"
+              "rgba(255, 159, 64, 1)",
             ],
-            borderWidth: 0.5
-          }
-        ]
+            borderWidth: 0.5,
+          },
+        ],
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
           xAxes: [
             {
-              stacked: true
-            }
+              stacked: true,
+            },
           ],
           yAxes: [
             {
-              stacked: true
-            }
-          ]
-        }
-      }
+              stacked: true,
+            },
+          ],
+        },
+      },
     });
   };
   render() {
     console.log("charts-Render");
-    // this.fff();
+    // console.log(this.props.lists);
     return (
       <div className="TeamsCharts-wrap">
+        {/* {this.props.lists} */}
         {/* onresize={this.fff()} */}
         {/* <button onClick={this.fff}>see wins/loses</button> */}
         {/* mycharts */}
-        <canvas id="myChart" ref={this.chartRef} width="100%" />
+        <canvas id="myChart" ref={this.chartRef} />
       </div>
     );
   }

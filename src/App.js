@@ -1,51 +1,56 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import "./App.css";
 import "./assets/css/all.css";
 import NbaHammer from "./components/NbaHammer";
 import TeamsCharts from "./components/TeamsCharts";
-import NbaTeams from "./components/NbaTeams";
+import TeamsNav from "./components/TeamsNav";
+import Teams from "./components/Teams";
+import MainHeader from "./components/layout/mainHeader";
+
+import PlayerSlick from "./components/PlayerSlick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 // import "./css/nba-hammer.css";
 // import "sequencejs/scripts/sequence.min.js";
-class App extends Component {
-  state = {
-    album: "",
-    lists: []
-  };
-  api = {
+function App() {
+  const [lists, setLists] = useState([]);
+  useEffect(() => {
+    fetchingApi();
+  }, []);
+  const api = {
     key: "bc5009f7498a4e8cac246d6fbdd34692",
-    base: "https://api.sportsdata.io/v3/nba/scores/json/Standings/2020"
+    base: "https://api.sportsdata.io/v3/nba/scores/json/Standings/2020",
   };
-  componentWillMount() {
-    console.log("app-WillMount");
-  }
-  componentDidMount = async () => {
-    console.log("app-DidMount");
-    const data = await fetch(`${this.api.base}?key=${this.api.key}`)
-      .then(response => response.json())
-      .then(result => {
+  const fetchingApi = async () => {
+    // console.log("app-DidMount");
+    const data = await fetch(`${api.base}?key=${api.key}`)
+      .then((response) => response.json())
+      .then((result) => {
         return result;
         console.log(result);
       });
-    this.setState({
-      lists: data
-    });
-    console.log(this.state.lists);
+    setLists(data);
   };
-  render() {
-    console.log("app-Render");
-    return (
-      <React.Fragment>
+
+  return (
+    <React.Fragment>
+      <Router>
         <header>
-          <NbaTeams />
+          <MainHeader />
+          <TeamsNav />
         </header>
-        {/* <header className="App-header"></header> */}
         <main>
-          <TeamsCharts lists={this.state.lists} />
-          <NbaHammer />
+          <Teams lists={lists} />
+          {/* <TeamsCharts lists={lists} /> */}
+          {/* <NbaHammer /> */}
+          {/* <PlayerSlick /> */}
         </main>
-      </React.Fragment>
-    );
-  }
+      </Router>
+    </React.Fragment>
+  );
 }
 
 export default App;

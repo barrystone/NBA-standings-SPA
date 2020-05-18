@@ -1,21 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap");
 main {
   width: 100%;
 }
 
-.NbaTeamsNav-wrap {
-  background-color: #d8d8d8;
+.mainHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-.NbaTeamsNav-wrap h3 {
-  color: red;
-  border: 2px solid black;
+.mainHeader .mainHeader-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  background-color: #f6eeee;
 }
 
-.NbaTeamsNav-wrap ul {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+.mainHeader .mainHeader-nav .mainHeader-nav-left-container {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-left-container .mainHeader-nav-left-container-logoImg {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 44px;
+  margin: 3px 5px;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-center-container {
+  -webkit-box-flex: 9;
+      -ms-flex: 9;
+          flex: 9;
+  width: 80%;
+  margin: auto 0;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-center-container ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-center-container ul li {
+  float: left;
+  margin: 0 2%;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-center-container ul li a {
+  font-size: 23px;
+  color: #0620aa;
+  text-decoration: none;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-center-container ul li:hover::before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #0620aa;
+  float: left;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-center-container ul li:active::before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #ffffff;
+  float: left;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-right-container {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-right-container .mainHeader-nav-right-container-box {
+  float: right;
+  background-image: url("../images/header/header-right-bg.png");
+  background-size: 267px 50px;
+  height: 50px;
+  width: 262px;
+  background-repeat: no-repeat;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-right-container .mainHeader-nav-right-container-box .mainHeader-nav-right-container-box-storeImg {
+  width: 32px;
+  position: absolute;
+  top: 12px;
+  right: 100px;
+}
+
+.mainHeader .mainHeader-nav .mainHeader-nav-right-container .mainHeader-nav-right-container-box .mainHeader-nav-right-container-box-userImg {
+  width: 40px;
+  position: absolute;
+  top: 6px;
+  right: 20px;
+}
+
+.mainHeader .mainHeader-line {
+  background-color: #b1b2b9;
+  position: absolute;
+  top: 50px;
+  height: 8px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .mainHeader-nav-center-container ul {
+    display: -ms-grid;
+    display: grid;
+    font-size: 10px;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.TeamsNav-wrap {
+  margin-top: 58px;
+  width: 100%;
+  background-color: #002772;
+}
+
+.TeamsNav-wrap .TeamsNav-nav {
+  height: 60px;
+  width: 100%;
+  margin: auto 0;
+}
+
+.TeamsNav-wrap .TeamsNav-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.TeamsNav-wrap .TeamsNav-nav ul li {
+  float: left;
+  margin: auto 3%;
+}
+
+.TeamsNav-wrap .TeamsNav-nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Rum Raisin", sans-serif;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .TeamsNav-box1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .TeamsNav-box1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .TeamsNav-box2 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .TeamsNav-box2 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.TeamsNav-Nav-active {
+  color: #2e9afe;
+}
+
+.TeamsCharts-wrap {
+  width: 83%;
+  margin: 10px auto;
 }
 
 body,
@@ -23,7 +213,6 @@ html,
 .seq {
   /* #1 */
   width: 100%;
-  height: 100%;
   /* #2 */
   margin: 0;
   padding: 0;
@@ -31,7 +220,6 @@ html,
 
 .nbaHammer-wrap {
   width: 100%;
-  height: 1000px;
   /* #2 */
   margin: 0;
   padding: 0;
@@ -44,7 +232,7 @@ html,
   font-family: sans-serif;
   color: white;
   text-align: center;
-  background-color: #2a93bc;
+  background-color: #aab6bb;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   -webkit-transition-property: background-color;
@@ -54,7 +242,6 @@ html,
 .seq-canvas,
 .seq-canvas > * {
   /* #1 */
-  height: 100%;
   width: 100%;
   /* #2 */
   margin: 0;
@@ -66,7 +253,7 @@ html,
   /* #1 */
   position: absolute;
   /* #2 */
-  padding: 32px;
+  padding: 32px 32px 6% 32px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   /* #3 */
@@ -177,15 +364,14 @@ html,
 
 .nav {
   /* #1 */
-  position: absolute;
+  position: relative;
   z-index: 100;
   left: 0;
   right: 0;
-  bottom: 2.5em;
   max-width: 640px;
   width: 100%;
   border: none;
-  margin: 0 auto;
+  margin: 0% auto 5% auto;
   padding: 0;
 }
 
@@ -279,7 +465,34 @@ html,
   border: none;
 }
 
-.TeamsCharts-wrap {
-  width: 100%;
+.TeamsDivNav-wrap {
+  background-color: #bcf5a9;
+}
+
+.TeamsDivNav-wrap ul {
+  padding: 0;
+  font-size: 12px;
+  text-align: center;
+  list-style-type: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.TeamsDivNav-wrap ul a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 501px) {
+  .TeamsDivNav-wrap ul {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .TeamsDivNav-wrap ul {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=all.css.map */
